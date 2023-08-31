@@ -11,136 +11,72 @@
 </head>
 
 <body>
-    <header>
+    <header class="container lg:w-full w-9/12 mx-auto">
         <!-- nav section start-->
-        <nav class="sm:container sm:w-9/12 sm:mx-auto lg:w-full">
-            <div class="navbar bg-base-100 lg:px-16 border-b">
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+        <nav>
+            <div class="navbar bg-base-100  border-b">
+            
 
-               <!-- icon -->
+                
                 <div class="navbar-start">
-                    
-                   <img src="./images/Logo.png" alt="">
+
+                    <img src="./images/Logo.png" alt="">
                 </div>
                 <!-- short btn -->
 
-                <div class="navbar-center">
+                <div class="lg:navbar-center md:navbar-end">
                     <a class="btn">Sort by view</a>
 
-                    
+
                 </div>
 
                 <!-- drop down -->
                 <div class="navbar-end hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
-                        
+
                         <li tabindex="0">
                             <details>
                                 <summary class="bg-[#FF1F3D] text-white">Blog</summary>
-                                <ul class="p-2">
-                                    <li><a>Submenu 1</a></li>
+                                <ul class="p-2 bg-black text-white h-16 overflow-y-scroll">
+                                    <li><a>The scope of a var variable is functional scope. The scope of a let variable is block scope. The scope of a const variable is block scope</a></li>
                                     <li><a>Submenu 2</a></li>
                                 </ul>
                             </details>
                         </li>
-                        
-                    </ul>
-                </div>
-                
 
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        
-                        <li>
-                            <a>Blog</a>
-                            <ul class="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        
                     </ul>
                 </div>
+
+
+                
             </div>
 
         </nav>
         <!-- nav section end-->
     </header>
-    <main>
+    <main  class="container lg:w-full w-9/12 mx-auto">
         <section>
             <div id="tap-container" class="flex justify-center mt-10 mb-8">
 
             </div>
 
-           
+
 
         </section>
-         <!-- card section -->
+        <!-- card section -->
         <section>
-            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-6">
 
-                <div class="card  bg-gray-100 shadow-xl">
-                    <figure>
-                      <img
-                        src="${news.thumbnail_url
-                        }"
-                        alt="Shoes"
-                      />
-                    </figure>
-                    <div class="card-body">
-                    <h2 class="card-title">
-                    ${news.author?.name}
-                    <div class="badge badge-secondary p-5">Excellent</div>
-                  </h2>
-                      <p>
-                      ${news?.details.slice(0,80)}
-                     
-                      </p>
-                      <p> Total view:  ${news.total_view? news.total_view : "No View" }  </p>
-                      <div class="card-footer flex justify-between mt-8">
-                        <div class="flex">
-                          <div>
-                            <div class="avatar online">
-                              <div class="w-14 rounded-full">
-                                <img
-                                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <h6>Jimmy Dane</h6>
-                            <small>2022-08-24 17:27:34</small>
-                          </div>
-                        </div>
-                        <div class="card-detaild-btn">
-                          <button onclick="handelModal('${news._id}')"
-                            class="inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900"
-                          >
-                            Details
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                            </div>
+              
 
             </div>
 
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        
+        
+    </footer>
 
 
     <!--scripts  -->
