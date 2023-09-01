@@ -12,7 +12,6 @@ const handelCategory = async () => {
         createDiv.innerHTML = `
         <a onclick = " displayLoad('${item.category_id}')" class="tab  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
         `
-
         tapContainer.appendChild(createDiv)
     });
 }
@@ -26,65 +25,74 @@ const displayLoad = async (itemId) => {
     console.log(cardItems);
     //const array = cardItems.length
 
-    if (cardItems.length ===0) {
-        const drawing = document.getElementById('drawing-container')
-        
-       
-       
-        const div = document.createElement('div')
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = ''
 
+    const drawing = document.getElementById('drawing-container')
+        drawing.innerHTML=''
+
+    if (cardItems.length !=0) {
+        cardItems.forEach(news => {
+            //console.log(news);
+            const div = document.createElement('div');
+            div.innerHTML = `
+    
+            <div class="card lg:w-auto bg-base-100 shadow-xl">
+            <figure class="relative"><img class="h-52" src="${news?.thumbnail ? news.thumbnail : ' <img src="./images/Icon.png" alt="">'}
+            " alt="" /> </figure>
+            <div class="absolute right-5 bottom-52">
+
+            <h1 class="text-white bg-[#171717] p-2 rounded-lg ">${news?.others?.posted_date ? timeConvert(news.others.posted_date) : ''}</h1>
+
+            </div>
+            <div class="flex gap-4 mt-4">
+            <div>
+                <div class="avatar online">
+                    <div class="w-14 rounded-full">
+                        <img
+                            src="${news?.authors[0]?.profile_picture}" />
+                    </div>
+                </div>
+            </div>
+            <div>
+            <h2 class="card-title text-xl">${news?.title}</h2>
+                
+            </div>
+           </div>
+            <div class="card-body">
+              <h2 class="card-title text-xl">${news?.authors[0]?.profile_name}  
+              <img src="${news.authors[0].verified ? `svg.svg` : ''}" alt="">
+              </h2>
+              <p>${news?.others?.views}  views</p>
+              
+            </div>
+           </div>
+              `
+            cardContainer.appendChild(div)
+        })
+    
+    } else {
+        const div = document.createElement('div')
         div.innerHTML = `
         <img class="" src="./images/Icon.png" alt="">
         <h1 class="text-2xl font-semibold">Oops!! Sorry, There is no content here</h1>
         `
         drawing.appendChild(div)
-
-    } else {
-        
     }
-
-
-    const cardContainer = document.getElementById('card-container');
-    cardContainer.innerHTML = ''
-    cardItems.forEach(news => {
-        //console.log(news);
-        const div = document.createElement('div');
-        div.innerHTML = `
-
-        <div class="card lg:w-auto bg-base-100 shadow-xl">
-        <figure><img class="h-52" src="${news?.thumbnail ? news.thumbnail : ' <img src="./images/Icon.png" alt="">'} " alt="Shoes" /></figure>
-       
-        <div class="flex gap-4 mt-4">
-        <div>
-            <div class="avatar online">
-                <div class="w-14 rounded-full">
-                    <img
-                        src="${news?.authors[0]?.profile_picture}" />
-                </div>
-            </div>
-        </div>
-        <div>
-        <h2 class="card-title text-xl">${news?.title}</h2>
-            
-        </div>
-       </div>
-        <div class="card-body">
-          <h2 class="card-title text-xl">${news?.authors[0]?.profile_name}  
-          <img src="${news.authors[0].verified ? `svg.svg` : ''}" alt="">
-          </h2>
-          <p>${news?.others?.views}  views</p>
-          
-        </div>
-       </div>
-       
-          
-          `
-        cardContainer.appendChild(div)
-    })
-
-
 
 }
 
+
+function timeConvert(totalSeconds){
+    const hours = Math.floor(totalSeconds / 3600);
+    const min = Math.floor((totalSeconds % 3600) /60)
+    const seconds = totalSeconds % 60;
+   return `${hours}hrs, ${min} min ago `;
+
+}
+
+
 handelCategory()
 displayLoad('1000')
+
+
