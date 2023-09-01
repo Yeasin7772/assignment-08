@@ -51,7 +51,9 @@ const displayLoad = async (itemId) => {
   </div>
 </div>
   <div class="card-body">
-    <h2 class="card-title text-xl">${news?.authors[0]?.profile_name}</h2>
+    <h2 class="card-title text-xl">${news?.authors[0]?.profile_name}  
+    <img src="${news.authors[0].verified? `svg.svg` : ''}" alt="">
+    </h2>
     <p>${news?.others?.views}  views</p>
     
   </div>
