@@ -10,7 +10,7 @@ const handelCategory = async () => {
         // console.log(item);
         const createDiv = document.createElement('div')
         createDiv.innerHTML = `
-        <a onclick = " displayLoad('${item.category_id}')" class="tab btn  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
+        <a onclick = " displayLoad('${item.category_id}')" class="tab btn hover:bg-[#FF1F3D]  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
         `
         tapContainer.appendChild(createDiv)
     });
@@ -19,22 +19,23 @@ const handelCategory = async () => {
 const displayLoad = async (itemId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${itemId}`);
     const data = await response.json();
-
+    
     const cardItems = data.data
     // const array = cardItems.length
    // console.log(cardItems);
     //const array = cardItems.length
+    
 
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = ''
 
     const drawing = document.getElementById('drawing-container')
         drawing.innerHTML=''
-       
+        
     if (cardItems.length !=0) {
         cardItems.forEach(news => {
             //console.log(news);
-           
+            
             const div = document.createElement('div');
             div.innerHTML = `
     
@@ -80,7 +81,7 @@ const displayLoad = async (itemId) => {
         `
         drawing.appendChild(div)
     }
-
+   
 }
 
 
@@ -92,27 +93,33 @@ const timeConvert = (totalSeconds) =>{
 
 }
 
-var array = []
-const sortBtn = async (id) =>{
-    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
-    const data = await response.json();
-    const allViews = data?.data
-    console.log(allViews);
-   
-    if (data && data.data && Array.isArray(data.data)) {
-        const allViews = data.data.map(item => item.others.views);
-        
-        console.log(allViews);
-        array = allViews.sort((a, b) => b - a);
-     
-     console.log(array);
-      } else {
-        console.log('No views data found.');
-      }
-      
-}
-sortBtn('1000')
 
+   const clickOn = () => {
+
+    const sortButton = async (id) => {
+
+        const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+        const data = await response.json();
+
+        if (data && data.data && Array.isArray(data.data)) {
+            const allItems = data.data.map(x => x.others.views);
+            
+            const short = (a, b) => {
+                const view = parseFloat(a);
+                const views = parseFloat(b);
+
+                return view - views
+
+            }
+            const ViewsAll = allItems.sort(short);
+            displayLoad ("1000")
+
+
+        } 
+    }
+
+    sortButton('1000');
+  }
 
 const btnBlog=()=>{
 window.location.href = 'blog.html'

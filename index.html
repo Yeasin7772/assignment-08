@@ -11,34 +11,28 @@
 </head>
 
 <body>
-    <header class="container lg:w-full w-9/12 mx-auto">
-        <!-- nav section start-->
-        <nav class="">
-            <div class="navbar bg-base-100 flex justify-between  border-b">
-                <div>
+   
+    <header class="mx-5">
 
-                    <img src="./images/Logo.png" alt="">
-                </div>
-                <!-- short btn -->
-
-                <div>
-                    <a onclick="sortBtn()" class="btn">Sort by view</a>
-
-
-                </div>
-
-                <!-- drop down -->
-                <div>
-                 <summary onclick="btnBlog()" class=" btn bg-[#FF1F3D] text-white">Blog</summary>
-                 <!-- <button  onclick="btnBlog()" class=" btn bg-[#FF1F3D] text-white" >Blog</button> -->
-                </div>
+        <div class="navbar bg-base-100 border-b">
+            <div class="navbar-start gap-3 ">
+                <img src="./images/Logo.png" alt="">
 
             </div>
+            <div class="navbar-center">
+                <a id="sort-btn" onclick="clickOn()" class="btn btn-ghost normal-case text-xl ">Sort by view</a>
+            </div>
+            <div class="navbar-end">
 
-        </nav>
-        <!-- nav section end-->
+                <button onclick='btnBlog()' id="blog-btn" class="btn bg-[#FF1F3D] text-white font-bold"> Blog</button>
+            </div>
+
+        </div>
+        
     </header>
-    <main  class="container lg:w-full w-9/12 mx-auto ">
+
+
+    <main  class="container mx-auto ">
         <section>
             <div id="tap-container" class="flex justify-center mt-10 mb-8">
 
