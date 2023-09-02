@@ -13,60 +13,45 @@
     </header>
     <main>
         <section class="container w-9/12 mx-auto">
-            <h1 class="text-center text-2xl font-extrabold mt-10">In JavaScript, var, let, and const are used for variable declaration and have different scopes and behaviors. </h1>
-            <div class="flex flex-col justify-center">
-                <!-- var blog -->
+           
+            <h1 class="text-center font-sans text-5xl font-medium mb-5 mt-10">Discuss the scope of var, let, and const </h1>
+            <div class="">
+                <div class="">
+                    <h1 class="text-4xl font-semibold text-yellow-500  py-6 ">var:</h1>
+                <p class="text-xl font-medium">Var is the global variable is declare outside and a function. you can reassigned the value many time </p>
+
+                </div>
                 <div class="p-6">
-                    <h1 class="text-4xl font-semibold text-blue-500 "> `var:`</h1>
-                    <li class="py-4 font-medium">Function Scope: Variables declared with var are function-scoped, 
-                        meaning they are only accessible within the function in which they are declared.</li>
-                        <li class="py-4 font-medium">Hoisting: Variables declared with var are hoisted to the top of their 
-                        containing function or global scope. This means you can access them before they are actually declared in the code, but they will be initialized with undefined.</li>
-                        <li class="py-4 font-medium">Re-declaration: You can re-declare a variable using var within the same scope, 
-                        which can lead to unintended issues.</li>
-                        <li class="py-4 font-medium">Global Scope: If declared outside of any function,
-                             var variables become global and are accessible throughout the entire script.</li>
+                    <h1 class="text-4xl font-semibold text-blue-500  py-6"> let:</h1>
+                    <p class="text-xl font-medium">  let variable is block scope. let declaration declares re-assignable optionally initializing each to a value.</p>
                 </div>
+                
+                <div class="p-6">
+                    <h1 class="text-4xl font-semibold text-green-500  py-6"> const:</h1>
+                    <p class="text-xl font-medium"> const variable is block scope. After setting its value you cannot reassigned the value a second time</p>
+                </div>
+                
 
-                 <!-- let blog -->
-                 <div class="p-6">
-                    <h1 class="text-4xl font-semibold text-yellow-500"> `let:`</h1>
-                    <li class="py-4 font-medium">Block Scope: Variables declared with let are block-scoped, meaning they are only accessible within the block (enclosed by curly braces) in which they are declared.</li>
-                        <li class="py-4 font-medium">Hoisting: Like var, let variables are hoisted but are not initialized. Attempting to access a let variable before its declaration will result in a ReferenceError..</li>
-                        <li class="py-4 font-medium">No Re-declaration: You cannot re-declare a variable with the same name in the same scope using let.</li>
-                        
-                </div>
+                
 
-                 <!-- var blog -->
-                 <div class="p-6">
-                    <h1 class="text-4xl font-semibold text-green-500"> `const:`</h1>
-                    <li class="py-4 font-medium">Block Scope: Similar to let, variables declared with const are block-scoped.</li>
-                        <li class="py-4 font-medium">Hoisting: const variables are also hoisted but, like let, are not initialized.</li>
-                        <li class="py-4 font-medium">Immutable Value: Variables declared with const are meant to be constants, meaning their value cannot be reassigned after initialization. However, for objects and arrays declared with const, the properties or elements within them can be modified.</li>
-                       
-                </div>
+                
             </div>
         </section>
         <hr>
          <section class="container w-9/12 mx-auto">
-        <h1 class="text-center text-2xl font-extrabold mt-10">
-            In JavaScript, null and undefined are both used to represent the absence of a value,<br> but they are used in slightly different contexts and have specific use cases. </h1>
+        <h1 class="text-center font-sans text-5xl font-medium mt-10"> Tell us the use cases of null and undefined</h1>
         <div class="p-6">
-            <h1 class="text-4xl font-semibold text-blue-500 "> `null:`</h1>
-            <li class="py-4 font-medium">Intentional Absence: null is often used to explicitly indicate that a variable or object property intentionally has no value or is empty.</li>
-                <li class="py-4 font-medium">Assignment: You can set a variable or object property to null to indicate that it should not hold any meaningful value or reference.</li>
-                <li class="py-4 font-medium">Comparison: You can use null when comparing for absence, especially if you want to distinguish between an intentionally empty value and an undefined value.</li>
-               
+            <h1 class="text-4xl font-semibold text-blue-500  py-6"> null:</h1>
+            <p class="text-xl font-medium"> null means an empty value or blank value</p>
         </div>
 
         <div class="p-6">
-            <h1 class="text-4xl font-semibold text-yellow-500 "> `undefined:`</h1>
-            <li class="py-4 font-medium">Implicit Absence: undefined typically indicates that a variable or object property has not been assigned any value, or a function has no return value specified (implicitly returns undefined).</li>
-                <li class="py-4 font-medium">Default Value: Variables declared but not assigned a value are initialized with undefined.</li>
-                <li class="py-4 font-medium">Function Parameters: Parameters that are not provided when calling a function are also undefined by default.</li>
+            <h1 class="text-4xl font-semibold text-yellow-500  py-6 "> undefined:</h1>
+            <p class="text-xl font-medium"> And define means the variable has been declared, but it's value has not been assigned.</p>
                
         </div>
 
+    
 
         </section>
         <hr>
@@ -75,22 +60,15 @@
             <h1 class="text-5xl font-sans font-medium  text-center mb-6">What is a REST API?</h1>
 
             <div class="p-6">
-                <h1 class="text-4xl font-semibold text-emerald-200 "> `API:`</h1>
-                <p>An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.
-                 For this reason, REST APIs are sometimes referred to RESTful APIs.</p>
+                <h1 class="text-4xl font-semibold py-6 text-emerald-200 "> API:</h1>
+                <p class="text-xl font-medium">API stands for application programming interface and API act like a link that allow two application to talk to each other</p>
                 
                    
             </div>
 
             
-            <div class="p-6">
-                <h1 class="text-4xl font-semibold text-fuchsia-300"> How REST API work</h1>
-                <p>REST APIs communicate via HTTP requests to perform standard database functions like creating, reading, updating, and deleting records (also known as CRUD) within a resource. For example, a REST API would use a GET request to retrieve a record, a POST request to create one, a PUT request to update a record, and a DELETE request to delete one. All HTTP methods can be used in API calls. A 
-                well-designed REST API is similar to a website running in a web browser with built-in HTTP functionality.</p>
-                
-                   
-            </div>
-
+          
+        
         </section>
 
     </main>

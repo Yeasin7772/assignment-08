@@ -10,7 +10,7 @@ const handelCategory = async () => {
         // console.log(item);
         const createDiv = document.createElement('div')
         createDiv.innerHTML = `
-        <a onclick = " displayLoad('${item.category_id}')" class="tab  btn  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
+        <a onclick = " displayLoad('${item.category_id}')" class="tab btn  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
         `
         tapContainer.appendChild(createDiv)
     });
@@ -30,10 +30,11 @@ const displayLoad = async (itemId) => {
 
     const drawing = document.getElementById('drawing-container')
         drawing.innerHTML=''
-
+       
     if (cardItems.length !=0) {
         cardItems.forEach(news => {
             //console.log(news);
+           
             const div = document.createElement('div');
             div.innerHTML = `
     
@@ -91,23 +92,29 @@ const timeConvert = (totalSeconds) =>{
 
 }
 
-
-const sortBtn = async () =>{
+var array = []
+const sortBtn = async (id) =>{
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
     const data = await response.json();
-   //const allView =data?.data[0]?.others?.views
-   const allView =data?.data
-    console.log(allView);
-
-    allView.forEach(item => {
-        console.log(item);
-    })
-
+    const allViews = data?.data
+    console.log(allViews);
+   
+    if (data && data.data && Array.isArray(data.data)) {
+        const allViews = data.data.map(item => item.others.views);
+        
+        console.log(allViews);
+        array = allViews.sort((a, b) => b - a);
+     
+     console.log(array);
+      } else {
+        console.log('No views data found.');
+      }
+      
 }
+sortBtn('1000')
 
 
 const btnBlog=()=>{
-console.log('blog');
 window.location.href = 'blog.html'
 }
 
