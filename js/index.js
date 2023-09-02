@@ -76,8 +76,8 @@ const displayLoad = async (itemId) => {
     } else {
         const div = document.createElement('div')
         div.innerHTML = `
-        <img class="" src="./images/Icon.png" alt="">
-        <h1 class="text-2xl font-semibold">Oops!! Sorry, There is no content here</h1>
+        <div class=" flex justify-center"><img  src="./images/Icon.png" alt="" /></div>
+        <h1 class="text-2xl text-center font-semibold">Oops!! Sorry, There is  no content here</h1>
         `
         drawing.appendChild(div)
     }
