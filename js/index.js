@@ -10,7 +10,7 @@ const handelCategory = async () => {
         // console.log(item);
         const createDiv = document.createElement('div')
         createDiv.innerHTML = `
-        <a onclick = " displayLoad('${item.category_id}')" class="tab  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
+        <a onclick = " displayLoad('${item.category_id}')" class="tab  btn  md:text-xl sm:text-xl lg:text-2xl text-black"">${item.category}</a> 
         `
         tapContainer.appendChild(createDiv)
     });
@@ -22,7 +22,7 @@ const displayLoad = async (itemId) => {
 
     const cardItems = data.data
     // const array = cardItems.length
-    console.log(cardItems);
+   // console.log(cardItems);
     //const array = cardItems.length
 
     const cardContainer = document.getElementById('card-container');
@@ -83,13 +83,34 @@ const displayLoad = async (itemId) => {
 }
 
 
-function timeConvert(totalSeconds){
+const timeConvert = (totalSeconds) =>{
     const hours = Math.floor(totalSeconds / 3600);
     const min = Math.floor((totalSeconds % 3600) /60)
     const seconds = totalSeconds % 60;
    return `${hours}hrs, ${min} min ago `;
 
 }
+
+
+const sortBtn = async () =>{
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
+    const data = await response.json();
+   //const allView =data?.data[0]?.others?.views
+   const allView =data?.data
+    console.log(allView);
+
+    allView.forEach(item => {
+        console.log(item);
+    })
+
+}
+
+
+const btnBlog=()=>{
+console.log('blog');
+window.location.href = 'blog.html'
+}
+
 
 
 handelCategory()

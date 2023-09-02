@@ -25,7 +25,7 @@
                 <!-- short btn -->
 
                 <div class="lg:navbar-center md:navbar-end">
-                    <a class="btn">Sort by view</a>
+                    <a onclick="sortBtn()" class="btn">Sort by view</a>
 
 
                 </div>
@@ -35,13 +35,10 @@
                     <ul class="menu menu-horizontal px-1">
 
                         <li tabindex="0">
-                            <details>
-                                <summary class="bg-[#FF1F3D] text-white">Blog</summary>
-                                <ul class="p-2 bg-black text-white h-16 overflow-y-scroll">
-                                    <li><a>The scope of a var variable is functional scope. The scope of a let variable is block scope. The scope of a const variable is block scope</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
+                            
+                                <summary onclick="btnBlog()" class="bg-[#FF1F3D] text-white">Blog</summary>
+                               
+                            
                         </li>
 
                     </ul>
@@ -54,7 +51,7 @@
         </nav>
         <!-- nav section end-->
     </header>
-    <main  class="container lg:w-full w-9/12 mx-auto">
+    <main  class="container lg:w-full w-9/12 mx-auto ">
         <section>
             <div id="tap-container" class="flex justify-center mt-10 mb-8">
 
@@ -82,7 +79,7 @@
         </section>
     </main>
     <footer>
-        
+       
        
     </footer>
 
